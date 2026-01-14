@@ -1,0 +1,258 @@
+
+I'll create a professional contact page for the qBittorrent-Search-Plugins project with a modern glassmorphism design.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - qBittorrent Search Plugins</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #feca57 75%, #ff6b6b 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        .input-glass {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .input-glass:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-glass {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-glass:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass sticky top-0 z-50 px-6 py-4 mb-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-download text-white text-2xl"></i>
+                <span class="text-white font-bold text-xl">qBittorrent Search Plugins</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-white hover:text-gray-200 transition">Home</a>
+                <a href="about.html" class="text-white hover:text-gray-200 transition">About</a>
+                <a href="contact.html" class="text-white font-semibold">Contact</a>
+                <a href="https://github.com/chirag127" class="text-white hover:text-gray-200 transition">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pb-20">
+        <!-- Hero Section -->
+        <div class="text-center mb-12 fade-in">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Get in Touch</h1>
+            <p class="text-xl text-white/90 max-w-2xl mx-auto">
+                Have questions about our qBittorrent search plugins? Need support or want to contribute? 
+                We'd love to hear from you!
+            </p>
+        </div>
+
+        <!-- Contact Content Grid -->
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <!-- Contact Form -->
+            <div class="glass p-8 fade-in">
+                <h2 class="text-2xl font-bold text-white mb-6">Send us a Message</h2>
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <label class="text-white text-sm mb-2 block">Your Name</label>
+                        <input type="text" 
+                               class="input-glass w-full px-4 py-3 rounded-lg text-white placeholder-white/50 outline-none"
+                               placeholder="John Doe"
+                               required>
+                    </div>
+                    <div>
+                        <label class="text-white text-sm mb-2 block">Email Address</label>
+                        <input type="email" 
+                               class="input-glass w-full px-4 py-3 rounded-lg text-white placeholder-white/50 outline-none"
+                               placeholder="your@email.com"
+                               required>
+                    </div>
+                    <div>
+                        <label class="text-white text-sm mb-2 block">Subject</label>
+                        <select class="input-glass w-full px-4 py-3 rounded-lg text-white outline-none">
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="bug">Bug Report</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="contribute">Contribution</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-white text-sm mb-2 block">Message</label>
+                        <textarea rows="5" 
+                                  class="input-glass w-full px-4 py-3 rounded-lg text-white placeholder-white/50 outline-none resize-none"
+                                  placeholder="Tell us more about your inquiry..."
+                                  required></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="btn-glass w-full py-3 rounded-lg text-white font-semibold">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-6">
+                <!-- Direct Contact -->
+                <div class="glass p-8 fade-in">
+                    <h2 class="text-2xl font-bold text-white mb-6">Direct Contact</h2>
+                    <div class="space-y-4">
+                        <a href="mailto:chiragsinghal127@gmail.com" 
+                           class="flex items-center space-x-4 text-white hover:text-gray-200 transition group">
+                            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:bg-white/30">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-white/80">chiragsinghal127@gmail.com</p>
+                            </div>
+                        </a>
+                        <div class="flex items-center space-x-4 text-white">
+                            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Location</p>
+                                <p class="text-white/80">Bhubaneswar, Odisha, India</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 text-white">
+                            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Role</p>
+                                <p class="text-white/80">Software Engineer & GenAI Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="glass p-8 fade-in">
+                    <h2 class="text-2xl font-bold text-white mb-6">Connect With Us</h2>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/chirag127" 
+                           class="social-icon w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/chirag-singhal1" 
+                           class="social-icon w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://buymeacoffee.com/WhyIsWhen" 
+                           class="social-icon w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30">
+                            <i class="fas fa-mug-hot text-xl"></i>
+                        </a>
+                        <a href="mailto:chiragsinghal127@gmail.com" 
+                           class="social-icon w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Info -->
+                <div class="glass p-8 fade-in">
+                    <h2 class="text-2xl font-bold text-white mb-4">Project Info</h2>
+                    <p class="text-white/90 mb-4">
+                        This project provides high-quality search plugins for qBittorrent, 
+                        enhancing your torrent search experience with multiple engines and robust features.
+                    </p>
+                    <div class="flex items-center space-x-2 text-white/80">
+                        <i class="fas fa-clock"></i>
+                        <span>Response time: Within 24-48 hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="max-w-4xl mx-auto mt-12">
+            <div class="glass p-8 fade-in">
+                <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <details class="group">
+                        <summary class="cursor-pointer text-white font-semibold p-4 bg-white/10 rounded-lg hover:bg-white
